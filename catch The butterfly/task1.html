@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly
+    </title>
+</head>
+<style>
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('/catch\ The\ butterfly/jungle.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    color: rgb(0, 0, 0);
+    font-size: 45px;
+    text-align: center;
+}
+
+#butterfly{
+    position: absolute;
+    height: 260px;
+    width: 260px;
+    cursor: pointer;
+}
+#container{
+    position: relative;
+}
+</style>
+<body>
+    <h2>Catch the Butterfly &#128540</h2>
+    <!-- <div class="bg"><img src="jungle.jpeg"></div> -->
+    <div id="container">
+    <div id="butterfly"><img src="butturfly-removebg-preview.png" height="250px" width="270px"></div>
+    <script>
+       
+const butterfly = document.getElementById('butterfly');
+
+butterfly.addEventListener('click', () => {
+    changeButterflyPosition();
+});
+
+function changeButterflyPosition() {
+    const maxX = window.innerWidth - butterfly.clientWidth;
+    const maxY = window.innerHeight - butterfly.clientHeight;
+
+    const newX = Math.floor(Math.random() * maxX);
+    const newY = Math.floor(Math.random() * maxY);
+
+    butterfly.style.left = newX + 'px';
+    butterfly.style.top = newY + 'px';
+}
+
+
+changeButterflyPosition();
+      </script>
+
+</body>
+</html>
